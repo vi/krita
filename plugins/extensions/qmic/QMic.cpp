@@ -122,7 +122,8 @@ void QMic::slotQMic(bool again)
     // find the krita-gmic-qt plugin
     QString pluginPath = PluginSettings::gmicQtPath();
     if (pluginPath.isEmpty() || !QFileInfo(pluginPath).exists() || !QFileInfo(pluginPath).isFile()) {
-        QMessageBox::warning(0, i18nc("@title:window", "Krita"), i18n("Krita cannot find the gmic-qt plugin."));
+        QMessageBox::warning(0, i18nc("@title:window", "Krita"),
+            i18n("Krita cannot find the gmic-qt plugin. Check Settings->Configure Krita->G'Mic-Qt integration."));
         return;
     }
 
